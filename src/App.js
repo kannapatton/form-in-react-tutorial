@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import { Component } from 'react';
 
-function App() {
+class App() extends Component {
+  constructor(props) {
+    super(props)
+
+  }
+}
   return (
     <div className="App">
       <header className="App-header">
