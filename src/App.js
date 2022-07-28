@@ -1,31 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
-import { Component } from 'react';
-
-class App() extends Component {
+//part of class based component
+import React, { Component } from 'react';
+//class based component
+class App extends Component {
   constructor(props) {
     super(props)
-
+    //stores the data entered into the form
+    this.state = {
+      firstName:""
+    }
+    //this.handleChange = this.handleChange.bind(this)
   }
-}
+  //moves input from form to state
+  handleChange = (e)=>{
+    this.setState({
+      firstName:e.target.value
+    })
+  }
+
+  //don't forget to render!
+  render() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
+        <p>2nd form in react</p>
+        <form>
+          <input type="text" value={this.state.firstName}
+           onChange={e => this.handleChange(e)}></input>
+          <input type="submit"></input>
+        </form>
       </header>
     </div>
   );
 }
+}
+
 
 export default App;
